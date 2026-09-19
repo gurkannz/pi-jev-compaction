@@ -1,0 +1,55 @@
+{
+  "name": "@gurkannz/pi-jev-compaction",
+  "version": "0.1.0",
+  "description": "Verbatim context compaction for pi: Jev scores every tool call and result, stale ones are dropped or truncated, nothing is ever rewritten.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gurkannz/pi-jev-compaction.git"
+  },
+  "homepage": "https://github.com/gurkannz/pi-jev-compaction#readme",
+  "bugs": {
+    "url": "https://github.com/gurkannz/pi-jev-compaction/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "compaction",
+    "context",
+    "jev",
+    "typesafe"
+  ],
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "files": [
+    "extensions",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "^0.84.4",
+    "@earendil-works/pi-ai": "^0.84.4",
+    "@earendil-works/pi-coding-agent": "^0.84.4",
+    "@types/node": "^22.19.19",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}
